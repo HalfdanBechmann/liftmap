@@ -7,6 +7,7 @@
 //                                           //
 ///////////////////////////////////////////////
 
+#include <Arduino.h>
 #include <FastLED.h>
 #include <ArduinoJson.h>
 #include <WiFiClientSecure.h>
@@ -33,12 +34,7 @@ void setup() {
   // Connect to WPA/WPA2 network
   WiFi.begin(wifi_ssid, wifi_password);
   delay(1000);
-  //while (!Serial) {
-    // wait for serial port to connect. 
-    delay(10); 
-  //}
-  
-  delay(1000);
+
   leds[1] = CRGB::Yellow; FastLED.show();
 
   // attempt to connect to Wifi network:
@@ -95,9 +91,6 @@ void loop() {
   
   Serial.print("Buffer size: ");
   Serial.println(buffer_size);
-  Serial.println("---");
- // Serial.println(client.readString());
-  Serial.println("---");
 
   // Allocate JSON document with space for whole server response
   DynamicJsonDocument doc(32768);
@@ -144,13 +137,6 @@ void loop() {
 
   client.stop();
   delay(1000);
-/*
-  int j = 0;
-  while(1){
-    leds[j%NUM_LEDS] = CRGB::White; FastLED.show();
-    delay(30);
-    leds[j++%NUM_LEDS] = CRGB::Black; FastLED.show();
-  }
-*/
+
   delay(100 * 1000);
 }

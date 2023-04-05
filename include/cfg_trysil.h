@@ -8,7 +8,7 @@
 #define RESORT_NAME "Trysil"
 
 // WiFi SSID and password
-char wifi_ssid[]     = "Android AP";
+char wifi_ssid[]     = "Hytta 782c";
 char wifi_password[] = "takkfornett";
 
 // Lift names must be in the same order as the LEDs are wired
@@ -33,7 +33,7 @@ const char lift_names[NUM_LIFTS][32] = { \
   "H2 Høgegga", \
   "F1 Brynbekken", \
   "F13 Myrsnipa", \
-  "F6 Hytteheis 1", \  
+  "F6 Hytteheis 1", \
   "F7 Stormyra 2", \
   "F9 Stjerna", \
   "F10 Smotten", \
